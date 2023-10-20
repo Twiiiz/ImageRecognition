@@ -41,7 +41,7 @@ namespace ImageRecognition
 		{
 			if (images_path.Count() >= classNum)
 			{
-				MessageBox.Show("Папки для всіх образів уже було обрано.", "Помилка");
+				MessageBox.Show("All Folders are already selected.", "Error");
 			}
 			else
 			{
@@ -51,7 +51,7 @@ namespace ImageRecognition
 				{
 					if (!setNum)
 					{
-						MessageBox.Show("Не встановлено кількість образів у класах.", "Помилка");
+						MessageBox.Show("Number of images per learning class has not been set.", "Error");
 					}
 					else
 					{
@@ -68,16 +68,16 @@ namespace ImageRecognition
 
 						if (temp.Count == 0)
 						{
-							MessageBox.Show("Дана папка не містить зображень. Будь-ласка, спробуйте ще раз", "Помилка");
+							MessageBox.Show("This folder doesn't contain images", "Error");
 						}
 						else if (temp.Count < imageNum)
 						{
-							MessageBox.Show("Дана папка не має достатньої кількості зображень.", "Помилка");
+							MessageBox.Show("This folder doesn't contain enough images", "Error");
 						}
 						else
 						{
 							images_path.Add(temp.ToArray());
-							MessageBox.Show($"Встановлено набір образів для навчання для {images_path.Count()} класу", "Успіх");
+							MessageBox.Show($"Image folder of {images_path.Count()} class has been set", "Success");
 						}
 					}
 				}
@@ -89,12 +89,12 @@ namespace ImageRecognition
 			bool isNum = Int32.TryParse(textBox1.Text, out imageNum);
 			if (!isNum)
 			{
-				MessageBox.Show("Введено некоректне значення.", "Помилка");
+				MessageBox.Show("Invalid Format. Please, try again", "Error");
 			}
 			else
 			{
 				setNum = true;
-				MessageBox.Show("Кількість образів встановлено.");
+				MessageBox.Show("Number of images per learning class has been set.", "Success");
 			}
 		}
 
@@ -103,16 +103,16 @@ namespace ImageRecognition
 			bool isNum = Int32.TryParse(textBox2.Text, out recogn_num);
 			if (!isNum)
 			{
-				MessageBox.Show("Введено некоректне значення.", "Помилка");
+				MessageBox.Show("Invalid Format.", "Error");
 			}
 			else if (recogn_num > classNum)
 			{
-				MessageBox.Show("Обраного класу не існує.", "Помилка");
+				MessageBox.Show($"Class {recogn_num} doesn't exist.", "Error");
 			}
 			else
 			{
 				setNum = true;
-				MessageBox.Show("Клас образів для розпізнавання встановлено.");
+				MessageBox.Show("Class of recognisable images has been set.", "Success");
 			}
 		}
 
@@ -136,23 +136,23 @@ namespace ImageRecognition
 			bool IsNum = Double.TryParse(textBox3.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out learn_rate);
 			if (!IsNum | learn_rate >= 1 | learn_rate <= 0)
 			{
-				MessageBox.Show("Введено некоректне значення коефіцієнту навчання. Будь-ласка, спробуйте знову.", "Помилка");
+				MessageBox.Show("Invalid Format. Please, try again", "Error");
 			}
 			else if (iterations == 0)
 			{
-				MessageBox.Show("Будь-ласка, оберіть кількість навчальних ітерацій.", "Помилка");
+				MessageBox.Show("Choose number of learning iterations.", "Error");
 			}
 			else if (images_path.Count() < classNum)
 			{
-				MessageBox.Show("Неможливо здійснити навчання - не було обрано папки для всіх образів.", "Помилка");
+				MessageBox.Show("Not all learning classes have assigned folder.", "Error");
 			}
 			else if (recogn_images_path.Count() == 0)
 			{
-				MessageBox.Show("Неможливо здійснити навчання - не було обрано папки для образів для розпізнавання.", "Помилка");
+				MessageBox.Show("Recognisable images don't have an assigned folder.", "Error");
 			}
 			else
 			{
-				MessageBox.Show("Зачекайте, процес триває... В кінці ви отримаєте повідомлення про завершення процесу.");
+				MessageBox.Show("Wait until you recieve message about testing completion.");
 				double[] total_results = new double[imageNum];
 				Bitmap image;
 				Perceptron perceptron;
@@ -256,8 +256,8 @@ namespace ImageRecognition
 					learn_inputs.Clear();
 				}
 
-				MessageBox.Show("Тестування завершено.");
-				dataGridView1.Rows.Add($"Розпізнавання #1");
+				MessageBox.Show("Testing has been completed.");
+				dataGridView1.Rows.Add($"Recognition #1");
 				for (int i = 0; i < outputs.Count(); i++)
 				{
 					string[] results = new string[outputs[i].Length];
@@ -280,7 +280,7 @@ namespace ImageRecognition
 						count++;
 						if (count % classNum == 0 && i != outputs.Count() - 1)
 						{
-							dataGridView1.Rows.Add($"Розпізнавання #{i + 2}");
+							dataGridView1.Rows.Add($"Recognition #{i + 2}");
 						}
 					}
 				}
@@ -359,7 +359,7 @@ namespace ImageRecognition
 							else
 							{
 								recogn_images_path = temp;
-								MessageBox.Show($"Встановлено набір образів для розпізнавання", "Успіх");
+								MessageBox.Show($"Number of images for recognisable class has been set.", "Success");
 							}
 						}
 					}
