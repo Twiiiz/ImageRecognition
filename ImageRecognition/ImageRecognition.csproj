@@ -53,6 +53,7 @@
     <Compile Include="LearnForm.Designer.cs">
       <DependentUpon>LearnForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Perceptron.cs" />
     <Compile Include="RecognitionForm.cs">
       <SubType>Form</SubType>
     </Compile>
