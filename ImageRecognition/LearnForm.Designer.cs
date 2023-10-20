@@ -139,6 +139,7 @@
 			this.radioButton1.TabStop = true;
 			this.radioButton1.Text = "1000";
 			this.radioButton1.UseVisualStyleBackColor = true;
+			this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
 			// 
 			// radioButton2
 			// 
@@ -151,6 +152,7 @@
 			this.radioButton2.TabStop = true;
 			this.radioButton2.Text = "5000";
 			this.radioButton2.UseVisualStyleBackColor = true;
+			this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
 			// 
 			// radioButton3
 			// 
@@ -163,6 +165,7 @@
 			this.radioButton3.TabStop = true;
 			this.radioButton3.Text = "10000";
 			this.radioButton3.UseVisualStyleBackColor = true;
+			this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
 			// 
 			// LearnButton
 			// 
@@ -172,6 +175,7 @@
 			this.LearnButton.TabIndex = 4;
 			this.LearnButton.Text = "Teach Model";
 			this.LearnButton.UseVisualStyleBackColor = true;
+			this.LearnButton.Click += new System.EventHandler(this.LearnButton_Click);
 			// 
 			// NextButton
 			// 
@@ -206,6 +210,7 @@
 			this.Controls.Add(this.LoadButton);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "LearnForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "LearnForm";
 			this.groupBox1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
