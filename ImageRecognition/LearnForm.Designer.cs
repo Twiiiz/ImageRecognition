@@ -65,6 +65,7 @@
 			this.LoadButton.TabIndex = 1;
 			this.LoadButton.Text = "Load Image";
 			this.LoadButton.UseVisualStyleBackColor = true;
+			this.LoadButton.Click += new System.EventHandler(this.LoadButton_Click);
 			// 
 			// SaveButton
 			// 
@@ -74,6 +75,7 @@
 			this.SaveButton.TabIndex = 2;
 			this.SaveButton.Text = "Add learning Class (Image)";
 			this.SaveButton.UseVisualStyleBackColor = true;
+			this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
 			// 
 			// pictureBox1
 			// 
@@ -179,6 +181,7 @@
 			this.NextButton.TabIndex = 5;
 			this.NextButton.Text = "Go to Recognition";
 			this.NextButton.UseVisualStyleBackColor = true;
+			this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
 			// 
 			// BackButton
 			// 
@@ -188,6 +191,7 @@
 			this.BackButton.TabIndex = 6;
 			this.BackButton.Text = "Return";
 			this.BackButton.UseVisualStyleBackColor = true;
+			this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
 			// 
 			// LearnForm
 			// 
