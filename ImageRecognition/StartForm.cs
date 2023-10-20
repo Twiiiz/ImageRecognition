@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace ImageRecognition
 {
-	public partial class StartForm : Form
+	public partial class Form1 : Form
 	{
-		public StartForm()
+		public Form1()
 		{
 			InitializeComponent();
+			this.MaximumSize = new Size(this.Width, this.Height);
 		}
 	}
 }
