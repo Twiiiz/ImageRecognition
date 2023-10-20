@@ -16,6 +16,7 @@ namespace ImageRecognition
 		{
 			InitializeComponent();
 			this.MaximumSize = new Size(this.Width, this.Height);
+			this.MinimumSize = new Size(this.Width, this.Height);
 		}
 
 		public static int numImage;
