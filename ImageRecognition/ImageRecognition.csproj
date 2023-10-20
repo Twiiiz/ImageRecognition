@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageResizer.cs" />
     <Compile Include="LearnForm.cs">
       <SubType>Form</SubType>
     </Compile>
