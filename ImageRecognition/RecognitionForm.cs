@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ImageRecognition
 {
-	public partial class Form1 : Form
+	public partial class RecognitionForm : Form
 	{
-		public Form1()
+		public RecognitionForm()
 		{
 			InitializeComponent();
 		}
