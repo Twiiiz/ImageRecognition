@@ -293,8 +293,8 @@ namespace ImageRecognition
 					}
 				}
 				double grade = ((double)count2 / total_results.Length) * 100.00;
-				richTextBox1.Text = $"За результатами тестування виявлено, що кількість вдалих спроб розпізнавання - {count2}," +
-					$" а кількість невдалих - {imageNum - count2}. Це означає, що точність роботи нейронної мережі перцептрон у даному тестуванні складає {grade}%.";
+				richTextBox1.Text = $"Results of a test show following: number of successful recognitions (>0.8) - {count2}," +
+					$" number of unsuccessful ones - {imageNum - count2}. It means that accuracy of Perceptron Model in this test was {grade}%.";
 			}
 		}
 
