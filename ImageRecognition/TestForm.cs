@@ -300,7 +300,7 @@ namespace ImageRecognition
 
 		private void ExitButton_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("Ви дійсно хочете закрити програму?", "Вихід", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			if (MessageBox.Show("Do You want to Quit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 			{
 				Application.Exit();
 			}
@@ -317,19 +317,19 @@ namespace ImageRecognition
 		{
 			if (recogn_images_path.Count() != 0)
 			{
-				MessageBox.Show("Папку з образами для розпізнавання уже було обрано.", "Помилка");
+				MessageBox.Show("Folder for recognisable images has already been selected.", "Помилка");
 			}
 			else
 			{
 				if (!setNum)
 				{
-					MessageBox.Show("Не встановлено кількість образів у класах.", "Помилка");
+					MessageBox.Show("Number of images per class is not set.", "Error");
 				}
 				else
 				{
 					if (recogn_num == 0)
 					{
-						MessageBox.Show("Не обрано клас, до якого відносити зображення для розпізнавання.", "Помилка");
+						MessageBox.Show("Desired class of recognisable images is not selected.", "Error");
 					}
 					else
 					{
@@ -350,11 +350,11 @@ namespace ImageRecognition
 
 							if (temp.Count == 0)
 							{
-								MessageBox.Show("Дана папка не містить зображень. Будь-ласка, спробуйте ще раз", "Помилка");
+								MessageBox.Show("The folder doesn't contain images", "Error");
 							}
 							else if (temp.Count < imageNum)
 							{
-								MessageBox.Show("Дана папка не має достатньої кількості зображень.", "Помилка");
+								MessageBox.Show("The folder doesn't contain enough images.", "Error");
 							}
 							else
 							{
