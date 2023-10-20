@@ -1,6 +1,6 @@
 ﻿namespace ImageRecognition
 {
-	partial class Form1
+	partial class StartForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -31,7 +31,7 @@
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
+			this.ExitButton = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
@@ -51,6 +51,7 @@
 			this.button1.TabIndex = 1;
 			this.button1.Text = "Create and Teach Model";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// button2
 			// 
@@ -60,15 +61,17 @@
 			this.button2.TabIndex = 2;
 			this.button2.Text = "Test Model Efficiency";
 			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
-			// button3
+			// ExitButton
 			// 
-			this.button3.Location = new System.Drawing.Point(180, 308);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(165, 46);
-			this.button3.TabIndex = 3;
-			this.button3.Text = "Exit";
-			this.button3.UseVisualStyleBackColor = true;
+			this.ExitButton.Location = new System.Drawing.Point(180, 308);
+			this.ExitButton.Name = "ExitButton";
+			this.ExitButton.Size = new System.Drawing.Size(165, 46);
+			this.ExitButton.TabIndex = 3;
+			this.ExitButton.Text = "Exit";
+			this.ExitButton.UseVisualStyleBackColor = true;
+			this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
 			// 
 			// label1
 			// 
@@ -80,17 +83,18 @@
 			this.label1.TabIndex = 4;
 			this.label1.Text = "Enter Number of classes for a model";
 			// 
-			// Form1
+			// StartForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(531, 378);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.button3);
+			this.Controls.Add(this.ExitButton);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.textBox1);
-			this.Name = "Form1";
+			this.Name = "StartForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Start";
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -102,7 +106,7 @@
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button ExitButton;
 		private System.Windows.Forms.Label label1;
 	}
 }
