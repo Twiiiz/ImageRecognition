@@ -30,10 +30,10 @@
 		{
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button4 = new System.Windows.Forms.Button();
+			this.SetButton1 = new System.Windows.Forms.Button();
+			this.SelectButton1 = new System.Windows.Forms.Button();
+			this.SelectButton = new System.Windows.Forms.Button();
+			this.SetButton2 = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -69,41 +69,45 @@
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Number of images per learning class";
 			// 
-			// button1
+			// SetButton1
 			// 
-			this.button1.Location = new System.Drawing.Point(63, 127);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(133, 28);
-			this.button1.TabIndex = 2;
-			this.button1.Text = "Define";
-			this.button1.UseVisualStyleBackColor = true;
+			this.SetButton1.Location = new System.Drawing.Point(63, 127);
+			this.SetButton1.Name = "SetButton1";
+			this.SetButton1.Size = new System.Drawing.Size(133, 28);
+			this.SetButton1.TabIndex = 2;
+			this.SetButton1.Text = "Set";
+			this.SetButton1.UseVisualStyleBackColor = true;
+			this.SetButton1.Click += new System.EventHandler(this.SetButton1_Click);
 			// 
-			// button2
+			// SelectButton1
 			// 
-			this.button2.Location = new System.Drawing.Point(63, 194);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(133, 55);
-			this.button2.TabIndex = 3;
-			this.button2.Text = "Choose a root folder for learning class";
-			this.button2.UseVisualStyleBackColor = true;
+			this.SelectButton1.Location = new System.Drawing.Point(63, 194);
+			this.SelectButton1.Name = "SelectButton1";
+			this.SelectButton1.Size = new System.Drawing.Size(133, 55);
+			this.SelectButton1.TabIndex = 3;
+			this.SelectButton1.Text = "Choose a root folder for learning class";
+			this.SelectButton1.UseVisualStyleBackColor = true;
+			this.SelectButton1.Click += new System.EventHandler(this.SelectButton1_Click);
 			// 
-			// button3
+			// SelectButton
 			// 
-			this.button3.Location = new System.Drawing.Point(63, 279);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(133, 55);
-			this.button3.TabIndex = 4;
-			this.button3.Text = "Choose a root folder for images you want to recognise";
-			this.button3.UseVisualStyleBackColor = true;
+			this.SelectButton.Location = new System.Drawing.Point(63, 279);
+			this.SelectButton.Name = "SelectButton";
+			this.SelectButton.Size = new System.Drawing.Size(133, 55);
+			this.SelectButton.TabIndex = 4;
+			this.SelectButton.Text = "Choose a root folder for images you want to recognise";
+			this.SelectButton.UseVisualStyleBackColor = true;
+			this.SelectButton.Click += new System.EventHandler(this.SelectButton2_Click);
 			// 
-			// button4
+			// SetButton2
 			// 
-			this.button4.Location = new System.Drawing.Point(63, 420);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(133, 28);
-			this.button4.TabIndex = 7;
-			this.button4.Text = "Define";
-			this.button4.UseVisualStyleBackColor = true;
+			this.SetButton2.Location = new System.Drawing.Point(63, 420);
+			this.SetButton2.Name = "SetButton2";
+			this.SetButton2.Size = new System.Drawing.Size(133, 28);
+			this.SetButton2.TabIndex = 7;
+			this.SetButton2.Text = "Set";
+			this.SetButton2.UseVisualStyleBackColor = true;
+			this.SetButton2.Click += new System.EventHandler(this.SetButton2_Click);
 			// 
 			// label2
 			// 
@@ -148,6 +152,7 @@
 			this.radioButton3.TabStop = true;
 			this.radioButton3.Text = "10000";
 			this.radioButton3.UseVisualStyleBackColor = true;
+			this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
 			// 
 			// radioButton2
 			// 
@@ -160,6 +165,7 @@
 			this.radioButton2.TabStop = true;
 			this.radioButton2.Text = "5000";
 			this.radioButton2.UseVisualStyleBackColor = true;
+			this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
 			// 
 			// radioButton1
 			// 
@@ -172,6 +178,7 @@
 			this.radioButton1.TabStop = true;
 			this.radioButton1.Text = "1000";
 			this.radioButton1.UseVisualStyleBackColor = true;
+			this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
 			// 
 			// label3
 			// 
@@ -216,6 +223,7 @@
 			this.ReturnButton.TabIndex = 10;
 			this.ReturnButton.Text = "Return to Start";
 			this.ReturnButton.UseVisualStyleBackColor = true;
+			this.ReturnButton.Click += new System.EventHandler(this.BackButton_Click);
 			// 
 			// ExitButton
 			// 
@@ -225,6 +233,7 @@
 			this.ExitButton.TabIndex = 11;
 			this.ExitButton.Text = "Exit";
 			this.ExitButton.UseVisualStyleBackColor = true;
+			this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
 			// 
 			// dataGridView1
 			// 
@@ -242,6 +251,7 @@
 			this.TestButton.TabIndex = 13;
 			this.TestButton.Text = "Test";
 			this.TestButton.UseVisualStyleBackColor = true;
+			this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
 			// 
 			// TestForm
 			// 
@@ -254,12 +264,12 @@
 			this.Controls.Add(this.ReturnButton);
 			this.Controls.Add(this.richTextBox1);
 			this.Controls.Add(this.groupBox2);
-			this.Controls.Add(this.button4);
+			this.Controls.Add(this.SetButton2);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.SelectButton);
+			this.Controls.Add(this.SelectButton1);
+			this.Controls.Add(this.SetButton1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.textBox1);
 			this.Name = "TestForm";
@@ -277,10 +287,10 @@
 
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button SetButton1;
+		private System.Windows.Forms.Button SelectButton1;
+		private System.Windows.Forms.Button SelectButton;
+		private System.Windows.Forms.Button SetButton2;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.GroupBox groupBox2;
