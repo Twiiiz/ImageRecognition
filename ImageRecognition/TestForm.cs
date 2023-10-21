@@ -317,7 +317,7 @@ namespace ImageRecognition
 		{
 			if (recogn_images_path.Count() != 0)
 			{
-				MessageBox.Show("Folder for recognisable images has already been selected.", "Помилка");
+				MessageBox.Show("Folder for recognisable images has already been selected.", "Error");
 			}
 			else
 			{
